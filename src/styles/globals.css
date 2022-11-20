@@ -24,3 +24,9 @@ a {
     background: black;
   }
 }
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('../../public/assets/Fira\ Code/FiraCode-VariableFont_wght.ttf');
+
+}
