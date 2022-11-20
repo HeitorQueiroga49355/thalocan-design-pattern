@@ -1,11 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import IconSearchDsk from '../../../../public/assets/icons/IconSearchDsk.svg'
 import IconUser from '../../../../public/assets/icons/IconUser.svg'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function CorrectHeader() {
+  const swiperRef = useRef<any>()
+
   return (
     <header>
       <StyledFirstLayer>
@@ -28,6 +31,45 @@ export default function CorrectHeader() {
           </div>
         </StyledContentLayerContainer>
       </StyledFirstLayer>
+      <StyledSecondLayer className="second-layer">
+        <StyledContentLayerContainer>
+          <button className="previous-slide">{'<'}</button>
+          <Swiper
+            spaceBetween={0}
+            slidesPerView={13}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={swiper => (swiperRef.current = swiper)}
+            direction="horizontal"
+          >
+            {[
+              0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+            ].map(element => {
+              return (
+                <SwiperSlide key={element}>
+                  <SlideContent>
+                    <div className="icon-wrapper">
+                      <Image src={IconUser} alt="Image Example" />
+                    </div>
+                    Example
+                  </SlideContent>
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
+          <button className="next-slide">{'>'}</button>
+        </StyledContentLayerContainer>
+      </StyledSecondLayer>
+      <StyledThirdLayer>
+        <StyledContentLayerContainer className="third-layer">
+          <nav>
+            <ul>
+              <li>Page</li>
+              <li>Page</li>
+              <li>Page</li>
+            </ul>
+          </nav>
+        </StyledContentLayerContainer>
+      </StyledThirdLayer>
     </header>
   )
 }
@@ -116,11 +158,103 @@ const StyledFirstLayer = styled.div`
 `
 
 const StyledContentLayerContainer = styled.div`
-  &.first-layer {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
 
-    width: 1292px;
-    max-width: 1292px;
+  width: 1292px;
+  max-width: 1292px;
+
+  &.first-layer {
+    justify-content: space-between;
+  }
+
+  &.third-layer {
+    align-items: center;
+  }
+`
+
+const StyledSecondLayer = styled.div`
+  width: 100%;
+  height: 56px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #211e1e;
+
+  button {
+    background: rgb(90, 93, 98);
+
+    font-weight: 800;
+    font-size: 20px;
+
+    border: none;
+
+    width: 25px;
+    height: 30px;
+
+    color: #fff;
+  }
+
+  button.next-slide {
+    border-radius: 0 4px 4px 0;
+  }
+
+  button.previous-slide {
+    border-radius: 4px 0 0 4px;
+  }
+`
+
+const SlideContent = styled.a`
+  display: flex;
+
+  height: 30px;
+  width: max-content;
+
+  padding: 8px;
+
+  background: #36373b;
+  border-radius: 4px;
+
+  font-weight: 800;
+  font-size: 13px;
+  color: #fff;
+
+  div.icon-wrapper {
+    margin: 0 5px 0 0;
+  }
+`
+
+const StyledThirdLayer = styled.div`
+  background: #fff;
+
+  height: 45px;
+
+  display: flex;
+  justify-content: center;
+
+  nav {
+    width: 100%;
+
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 13px;
+    color: rgb(83, 84, 89);
+  }
+
+  li {
+    list-style: none;
+
+    padding: 0;
+    margin: 0 24px 0 0;
+
+    width: 57.83px;
+  }
+
+  ul {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
   }
 `
