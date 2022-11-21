@@ -2,11 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useRef } from 'react'
 import styled from 'styled-components'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import IconSearchDsk from '../../../../public/assets/icons/IconSearchDsk.svg'
 import IconUser from '../../../../public/assets/icons/IconUser.svg'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import ButtonWithIcon from '../../molecules/ButtonWithIcon'
 
-export default function CorrectHeader() {
+export default function CorrectVersionHeader() {
   const swiperRef = useRef<any>()
 
   return (
@@ -22,12 +23,12 @@ export default function CorrectHeader() {
               <input type="text" placeholder="Search" />
               <Image src={IconSearchDsk} alt="Magnifying glass icon" />
             </div>
-            <button>
-              <div className="user-icon-wrapper">
-                <Image src={IconUser} alt="User icon" />
-              </div>
+            <ButtonWithIcon
+              icon={IconUser}
+              style={{ backgroundColor: '#c22637' }}
+            >
               Account
-            </button>
+            </ButtonWithIcon>
           </div>
         </StyledContentLayerContainer>
       </StyledFirstLayer>
@@ -46,12 +47,12 @@ export default function CorrectHeader() {
             ].map(element => {
               return (
                 <SwiperSlide key={element}>
-                  <SlideContent>
-                    <div className="icon-wrapper">
-                      <Image src={IconUser} alt="Image Example" />
-                    </div>
+                  <ButtonWithIcon
+                    style={{ backgroundColor: '#36373b', color: '#fff' }}
+                    icon={IconUser}
+                  >
                     Example
-                  </SlideContent>
+                  </ButtonWithIcon>
                 </SwiperSlide>
               )
             })}
@@ -182,7 +183,8 @@ const StyledSecondLayer = styled.div`
 
   background: #211e1e;
 
-  button {
+  button.next-slide,
+  button.previous-slide {
     background: rgb(90, 93, 98);
 
     font-weight: 800;

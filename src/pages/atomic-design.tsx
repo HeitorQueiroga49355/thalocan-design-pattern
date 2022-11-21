@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import CorrectHeader from '../components/organism/CorrectHeader'
+import CorrectHeader from '../components/organism/CorrectVersionHeader'
 import SwiperLauncher from '../components/organism/SwiperLauncher'
+import IconUser from '../../public/assets/icons/IconUser.svg'
 
 export default function AtomicDesign() {
+  console.log(IconUser)
   return (
     <StyledContainerPage>
-      <StyledH1>Poorly made component</StyledH1>
+      <StyledH1>Correct made component</StyledH1>
       <CorrectHeader />
+      <StyledH1>Poorly made component</StyledH1>
       {/* For some reason it had to have some slide outside the header for the header slide to work */}
       <SwiperLauncher />
     </StyledContainerPage>
