@@ -27,6 +27,11 @@ export default function Home() {
               <a>/axios-example</a>
             </Link>
           </li>
+          <li>
+            <Link href="/ssr-example">
+              <a>/ssr-example</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </Wrapper>

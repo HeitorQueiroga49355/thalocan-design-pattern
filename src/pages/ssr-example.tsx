@@ -21,8 +21,8 @@ export default function axiosExample({
 }
 
 export async function getServerSideProps() {
-  const responseApi = await axiosInstance('/api/hello')
-  const stringResponseApi = JSON.stringify(responseApi.data)
+  const responseApi = await fetch('http://localhost:3000/api/hello')
+  const stringResponseApi = JSON.stringify(await responseApi.json())
 
   const hours = new Date().getTime()
 
