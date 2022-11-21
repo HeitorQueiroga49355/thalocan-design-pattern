@@ -4,13 +4,18 @@ import { axiosInstance } from '../services/baseAxios'
 
 interface axiosExampleProps {
   stringResponseApi: string
+  hours: string
 }
 
-export default function axiosExample({ stringResponseApi }: axiosExampleProps) {
+export default function axiosExample({
+  stringResponseApi,
+  hours
+}: axiosExampleProps) {
   return (
     <StyledContainerPage>
       <StyledH1>Study how the axios was utilized in the code</StyledH1>
       {stringResponseApi}
+      <div>{hours}</div>
     </StyledContainerPage>
   )
 }
@@ -18,9 +23,13 @@ export default function axiosExample({ stringResponseApi }: axiosExampleProps) {
 export async function getServerSideProps() {
   const responseApi = await axiosInstance('/api/hello')
   const stringResponseApi = JSON.stringify(responseApi.data)
+
+  const hours = new Date().getTime()
+
   return {
     props: {
-      stringResponseApi
+      stringResponseApi,
+      hours
     }
   }
 }
@@ -28,14 +37,15 @@ export async function getServerSideProps() {
 const StyledContainerPage = styled.main`
   height: 100vh;
 
-  padding: 30px 0 0 0;
+  font-size: 30px;
 
-  background-color: #d4d4d4;
+  padding: 30px 0 0 0;
 `
 
 const StyledH1 = styled.h1`
   font-family: 'Fira Code';
   font-weight: 400;
+  font-size: 40px;
 
   margin: 0 0 30px 0;
 `

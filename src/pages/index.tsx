@@ -22,6 +22,11 @@ export default function Home() {
               <a>/styled-components</a>
             </Link>
           </li>
+          <li>
+            <Link href="/axios-example">
+              <a>/axios-example</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </Wrapper>
