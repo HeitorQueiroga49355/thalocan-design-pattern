@@ -13,8 +13,13 @@ export default function Home() {
       <nav>
         <ul>
           <li>
-            <Link href={'/atomic-design'}>
-              <a href="atomic-design">/atomic-design</a>
+            <Link href="/atomic-design">
+              <a>/atomic-design</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/styled-components">
+              <a>/styled-components</a>
             </Link>
           </li>
         </ul>
@@ -35,7 +40,7 @@ const Wrapper = styled.h1`
 
   font-size: 20px;
 
-  nav:hover {
+  a:hover {
     color: blue;
   }
 `
