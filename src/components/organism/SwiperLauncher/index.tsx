@@ -3,7 +3,7 @@ import { Swiper } from 'swiper/react'
 import 'swiper/css'
 
 export default function SwiperLauncher() {
-  const swiperRef = useRef<any>()
+  const swiperRef = useRef<unknown>()
 
   return (
     <Swiper

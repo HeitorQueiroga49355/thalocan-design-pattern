@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { axiosInstance } from '../services/baseAxios'
 
 interface axiosExampleProps {
   stringResponseApi: string
@@ -20,8 +21,8 @@ export default function axiosExample({
 }
 
 export async function getServerSideProps() {
-  const responseApi = await fetch('http://localhost:3000/api/hello')
-  const stringResponseApi = JSON.stringify(await responseApi.json())
+  const responseApi = await axiosInstance.get('http://localhost:3000/api/hello')
+  const stringResponseApi = JSON.stringify(responseApi.data)
 
   const hours = new Date().getTime()
 

@@ -32,6 +32,16 @@ export default function Home() {
               <a>/ssr-example</a>
             </Link>
           </li>
+          <li>
+            <Link href="/cdf-example">
+              <a>/cdf-example</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/ssg-example-with-revalidate">
+              <a>/ssg-example-with-revalidate</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </Wrapper>
