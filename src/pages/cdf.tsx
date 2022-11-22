@@ -20,7 +20,7 @@ export default function axiosExample() {
 
   return (
     <StyledContainerPage>
-      <StyledH1>Study how the axios was utilized in the code</StyledH1>
+      <StyledH1>See how next{"'"}s client data fetching works</StyledH1>
       {stringResponseApi}
       <div>{hours}</div>
     </StyledContainerPage>

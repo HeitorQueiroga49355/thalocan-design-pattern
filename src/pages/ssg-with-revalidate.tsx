@@ -12,7 +12,10 @@ export default function axiosExample({
 }: axiosExampleProps) {
   return (
     <StyledContainerPage>
-      <StyledH1>Study how the axios was utilized in the code</StyledH1>
+      <StyledH1>
+        See how server side rendering works with the revalidate property of
+        next.js
+      </StyledH1>
       {stringResponseApi}
       <div>{hours}</div>
     </StyledContainerPage>

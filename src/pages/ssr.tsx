@@ -12,7 +12,7 @@ export default function axiosExample({
 }: axiosExampleProps) {
   return (
     <StyledContainerPage>
-      <StyledH1>Study how the axios was utilized in the code</StyledH1>
+      <StyledH1>See how next{"'"}s server side rendering works</StyledH1>
       {stringResponseApi}
       <div>{hours}</div>
     </StyledContainerPage>

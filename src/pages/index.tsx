@@ -23,28 +23,28 @@ export default function Home() {
             </Link>
           </li>
           <li>
-            <Link href="/axios-example">
-              <a>/axios-example</a>
+            <Link href="/axios">
+              <a>/axios</a>
             </Link>
           </li>
           <li>
-            <Link href="/ssr-example">
-              <a>/ssr-example</a>
+            <Link href="/ssr">
+              <a>/ssr</a>
             </Link>
           </li>
           <li>
-            <Link href="/cdf-example">
-              <a>/cdf-example</a>
+            <Link href="/cdf">
+              <a>/cdf</a>
             </Link>
           </li>
           <li>
-            <Link href="/ssg-example-with-revalidate">
-              <a>/ssg-example-with-revalidate</a>
+            <Link href="/ssg-with-revalidate">
+              <a>/ssg-with-revalidate</a>
             </Link>
           </li>
           <li>
-            <Link href="/formik-example">
-              <a>/formik-example</a>
+            <Link href="/formik">
+              <a>/formik</a>
             </Link>
           </li>
         </ul>
