@@ -42,6 +42,11 @@ export default function Home() {
               <a>/ssg-example-with-revalidate</a>
             </Link>
           </li>
+          <li>
+            <Link href="/formik-example">
+              <a>/formik-example</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </Wrapper>
