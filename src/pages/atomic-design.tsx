@@ -6,7 +6,6 @@ import IconUser from '../../public/assets/icons/IconUser.svg'
 import WrongVersionHeader from '../components/organism/WrongVersionHeader'
 
 export default function AtomicDesign() {
-  console.log(IconUser)
   return (
     <StyledContainerPage>
       <StyledH1>Correct made component</StyledH1>
